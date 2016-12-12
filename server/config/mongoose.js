@@ -24,8 +24,14 @@ process.on('SIGINT', function(){
   mongoose.connection.close(function(){
     console.log( 'Mongoose default connection disconnected through app termination' );
     process.exist(0);
-  });
-});
+  })
+})
+
+// fs.readdirSync(models_path).forEach(function(file){
+//   if(file.indexOf('.js') >= 0){
+//     require(models_path + '/' + file); 
+//   }
+// })
 
 fs.readdirSync(models_path).forEach(function(file){
   if(reg.test(file)){

@@ -6,4 +6,4 @@ var FriendSchema = new mongoose.Schema({
   name: String
 })
 
-var Friend = mongoose.Schema('Friend', FriendSchema);
+var Friend = mongoose.model('Friend', FriendSchema);
