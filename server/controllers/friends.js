@@ -32,7 +32,7 @@ function FriendsController(){
   };
   this.delete = function(req, res){
     // res.json({placeholder:'delete'});
-    Friend.remove({name: req.params.name}, function(err){
+    Friend.remove({_id: req.params.id}, function(err){
       if(err) {
         console.log('something went wrong');
       } else { 
