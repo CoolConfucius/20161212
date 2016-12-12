@@ -1,0 +1,17 @@
+{
+  "name": "MyApp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Benjamin Huang <coolconfucius@yahoo.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
