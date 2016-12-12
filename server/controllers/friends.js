@@ -27,7 +27,13 @@ function FriendsController(){
     })
   };
   this.update = function(req, res){
-    res.json({placeholder:'update'});
+    // res.json({placeholder:'update'});
+    var editfriend = {
+      name: req.body.name
+    }
+    Friend.findOneAndUpdate({_id: req.params.id}, editfriend, function(err, friend){
+      res.json(friend);
+    })
 
   };
   this.delete = function(req, res){
