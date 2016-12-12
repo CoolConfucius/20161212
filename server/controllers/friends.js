@@ -12,12 +12,14 @@ function FriendsController(){
   };
   this.create = function(req, res){
     // res.json({placeholder:'create'});
+    console.log(req.body);
     var friend = new Friend({
-      name: req.params.name
+      name: req.body.name
     });
     friend.save(function(err){
       if(err){
-        console.log('something went wrong');;
+        console.log(err);
+        console.log('create method saving friend');;
       } else {
         console.log('successfully added a friend!');
         res.redirect('/');
@@ -42,7 +44,8 @@ function FriendsController(){
   };
   this.show = function(req, res){
     // res.json({placeholder:'show'});
-    Friend.findOne({name: req.params.name}, function(err, friend){
+    console.log(req.params);
+    Friend.findOne({_id: req.params.id}, function(err, friend){
       res.json(friend);
     })
   };
