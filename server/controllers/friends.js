@@ -48,7 +48,8 @@ function FriendsController(){
         console.log('something went wrong. in delete in friends.js');
       } else { 
         console.log('successfully removed a friend!');
-        res.redirect('/');
+        // res.redirect('/');
+        res.end(); 
       }
     })
 
