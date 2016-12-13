@@ -42,9 +42,10 @@ function FriendsController(){
   };
   this.delete = function(req, res){
     // res.json({placeholder:'delete'});
+    console.log("friends delete req params ", req.params);
     Friend.remove({_id: req.params.id}, function(err){
       if(err) {
-        console.log('something went wrong');
+        console.log('something went wrong. in delete in friends.js');
       } else { 
         console.log('successfully removed a friend!');
         res.redirect('/');

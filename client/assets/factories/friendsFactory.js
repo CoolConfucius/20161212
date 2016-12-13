@@ -7,9 +7,11 @@ app.factory('friendsFactory', ['$http', function($http){
     var _this = this;
     this.create = function(newfriend,callback){
       $http.post('/friends', newfriend).then(function(returned_data){
-        console.log(returned_data.data);
+        // console.log(returned_data);
+        // console.log(returned_data.data);
         if (typeof(callback) == 'function'){
-          callback(returned_data.data);
+          // callback(returned_data.data);
+          callback();
         }
       });
     };
@@ -31,8 +33,18 @@ app.factory('friendsFactory', ['$http', function($http){
    //Note: this can be shortened to $http.get('/friends').then(callback); 
    //But only if you only want to run the callback from the controller.
     };
-    this.delete = function(){// what parameters do we need?
-        // Your code here
+    this.delete = function(id, callback){
+      console.log("id: ", id);
+      $http.delete(`/friends/${id}`).then(function(){
+
+        for (var i = friends.length - 1; i >= 0; i--) {
+          if(friends[i]._id === id){
+            friends.splice(i, 1);
+            break; 
+          }    
+        };
+        callback(); 
+      })
     };
     this.show = function(){// what parameters do we need?
         // Your code here
