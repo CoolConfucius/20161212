@@ -45,6 +45,6 @@ app.factory('friendsFactory', ['$http', function($http){
         callback(friend);
     };
   }
-  console.log(new FriendsFactory());
+  // console.log(new FriendsFactory());
   return new FriendsFactory();
 }])

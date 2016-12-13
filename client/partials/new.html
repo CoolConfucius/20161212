@@ -1,8 +1,8 @@
 <div ng-controller="newController">
   <form action="">
-    <input type="text"> First Name <br>
-    <input type="text"> Last Name <br>
-    <input type="date"> Birthday <br>
-    <button>Create</button>
+    <input type="text" ng-model="newfriend.firstname"> First Name <br>
+    <input type="text" ng-model="newfriend.lastname"> Last Name <br>
+    <input type="date" ng-model="newfriend.birthday"> Birthday <br>
+    <button ng-click="addfriend()">Create</button>
   </form>
 </div>

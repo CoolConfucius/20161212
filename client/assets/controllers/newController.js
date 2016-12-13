@@ -10,6 +10,19 @@ app.controller('listController', ['$scope', '$location', 'friendsFactory', funct
   })
 }])
 
-app.controller('newController', [function(){
+app.controller('newController', ['$scope', '$location', 'friendsFactory', function($scope, $location, friendsFactory){
   console.log("newController");
+  $scope.newfriend = {
+    firstname: '', lastname: '', birthday: ''
+  }
+  $scope.addfriend = function(){
+    console.log("addfriend");
+    friendsFactory.create($scope.newfriend, function(){
+      // $scope.friends.push($scope.newfriend);
+      $scope.newfriend = {
+        firstname: '', lastname: '', birthday: ''
+      }
+      $location.url('/');
+    })
+  }
 }])

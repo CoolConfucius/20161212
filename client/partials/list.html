@@ -10,7 +10,7 @@
     <tbody>
       <tr ng-repeat="friend in friends track by $index">
         <td>{{$index}}</td>
-        <td>{{friend.name}}</td>
+        <td>{{friend.firstname}} {{friend.lastname}}</td>
         <td><button ng-click="showfriend($index)">show</button></td>
         <td><button ng-click="editfriend($index)">edit</button></td>
         <td><button ng-click="deletefriend($index)">delete</button></td>
