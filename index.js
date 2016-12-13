@@ -1,3 +1,4 @@
+console.log('indexjs');
 var mongoose  = require('mongoose'),
     express   = require('express'),
     bp        = require('body-parser'),
