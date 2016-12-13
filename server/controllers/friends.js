@@ -14,7 +14,9 @@ function FriendsController(){
     // res.json({placeholder:'create'});
     console.log(req.body);
     var friend = new Friend({
-      name: req.body.name
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      birthday: req.body.birthday
     });
     friend.save(function(err){
       if(err){
@@ -29,7 +31,9 @@ function FriendsController(){
   this.update = function(req, res){
     // res.json({placeholder:'update'});
     var editfriend = {
-      name: req.body.name
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      birthday: req.body.birthday
     }
     Friend.findOneAndUpdate({_id: req.params.id}, editfriend, function(err, friend){
       res.json(friend);
