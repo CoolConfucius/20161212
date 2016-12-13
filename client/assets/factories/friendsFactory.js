@@ -36,19 +36,17 @@ app.factory('friendsFactory', ['$http', function($http){
     this.delete = function(id, callback){
       console.log("id: ", id);
       $http.delete(`/friends/${id}`).then(function(){
-        console.log("here??");
-
         for (var i = friends.length - 1; i >= 0; i--) {
           if(friends[i]._id === id){
             friends.splice(i, 1);
-            if (typeof(callback) == 'function'){
-              console.log("here?");
-              callback();
-            } 
+            // if (typeof(callback) == 'function'){
+              
+            //   callback();
+            // } 
             break; 
           }    
         };
-
+        console.log("here?");
         if (typeof(callback) == 'function'){
           callback();
         } 
