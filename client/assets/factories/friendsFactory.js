@@ -35,16 +35,16 @@ app.factory('friendsFactory', ['$http', function($http){
     };
     this.delete = function(id, callback){
       console.log("id: ", id);
-      $http.delete(`/friends/${id}`).then(function(){
-        for (var i = friends.length - 1; i >= 0; i--) {
-          if(friends[i]._id === id){
-            friends.splice(i, 1);
-            break; 
-          }    
-        };
+      $http.delete(`/friends/${id}`).then(function(data){
+        // for (var i = friends.length - 1; i >= 0; i--) {
+        //   if(friends[i]._id === id){
+        //     friends.splice(i, 1);
+        //     break; 
+        //   }    
+        // };
         console.log("here?");
         if (typeof(callback) == 'function'){
-          callback();
+          callback(data);
         } 
       })
     };
@@ -52,7 +52,7 @@ app.factory('friendsFactory', ['$http', function($http){
       $http.get(`/friends/${id}`).then(function(data){
         console.log("show data: ", data);
         friend = data; 
-        callback(friend); 
+        callback(data); 
       })
     };
     // Sometimes you might not want to make a DB call, and just get the information stored in the factory.

@@ -13,7 +13,8 @@ app.controller('listController', ['$scope', '$location', 'friendsFactory', funct
     console.log($scope.friends[index]);
     var id = $scope.friends[index]._id; 
     friendsFactory.delete(id, function(){
-      // $scope.friends.splice(index, 1);
+      $scope.friends.splice(index, 1);
+      // $scope.friends = data; 
     })
   }
 
