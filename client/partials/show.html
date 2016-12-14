@@ -1,8 +1,13 @@
-<div ng-controller="editController">
+<div ng-controller="showController">
   <form action="">
-    <input type="text" ng-model="friend.firstname"> First Name <br>
-    <input type="text" ng-model="friend.lastname"> Last Name <br>
-    <input type="date" ng-model="friend.birthday"> Birthday <br>
-    <input type="date" ng-model="friend.createdAt"> user added <br>
+    
+    <label> {{friend.firstname}} First Name </label>
+    <br>
+    <label> {{friend.lastname}} Last Name </label>
+    <br>
+    <label> {{friend.birthday}} Birthday </label>
+    <br>
+    <label> {{friend.createdAt}} user added </label>
+    <br>
   </form>
 </div>

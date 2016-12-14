@@ -51,8 +51,8 @@ app.factory('friendsFactory', ['$http', function($http){
     this.show = function(id, callback){
       $http.get(`/friends/${id}`).then(function(data){
         console.log("show data: ", data);
-        friend = data; 
-        callback(data); 
+        // friend = data; 
+        callback(data.data); 
       })
     };
     // Sometimes you might not want to make a DB call, and just get the information stored in the factory.

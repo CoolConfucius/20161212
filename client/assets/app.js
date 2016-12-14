@@ -8,5 +8,11 @@ app.config(function($routeProvider){
   .when('/new', {
     templateUrl: 'partials/new.html'
   })
+  .when('/show/:id', {
+    templateUrl: 'partials/show.html'
+  })
+  .when('/edit/:id', {
+    templateUrl: 'partials/edit.html'
+  })
 
 })

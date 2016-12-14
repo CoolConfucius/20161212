@@ -21,10 +21,13 @@ app.controller('listController', ['$scope', '$location', 'friendsFactory', funct
   $scope.showfriend = function(index){
     console.log($scope.friends[index]);
     var id = $scope.friends[index]._id; 
-    // friendsFactory.show(id, function(){
-    //   $scope.friends.splice(index, 1);
-    // }) 
-    $location.url(`/friends/${id}`);
+    $location.url(`/show/${id}`);
+  }
+
+  $scope.editfriend = function(index){
+    console.log($scope.friends[index]);
+    var id = $scope.friends[index]._id; 
+    $location.url(`/edit/${id}`);
   }
 }])
 
