@@ -15,8 +15,8 @@ app.factory('friendsFactory', ['$http', function($http){
         }
       });
     };
-    this.update = function(editfriend, callback){ 
-      $http.put('/friends/:id', editfriend).then(function(data){
+    this.update = function(id, editfriend, callback){ 
+      $http.put(`/friends/${id}`, editfriend).then(function(data){
         console.log(data);
         if (typeof(callback) == 'function'){
           callback(data.data);
@@ -39,10 +39,6 @@ app.factory('friendsFactory', ['$http', function($http){
         for (var i = friends.length - 1; i >= 0; i--) {
           if(friends[i]._id === id){
             friends.splice(i, 1);
-            // if (typeof(callback) == 'function'){
-              
-            //   callback();
-            // } 
             break; 
           }    
         };
@@ -52,8 +48,12 @@ app.factory('friendsFactory', ['$http', function($http){
         } 
       })
     };
-    this.show = function(){// what parameters do we need?
-        // Your code here
+    this.show = function(id, callback){
+      $http.get(`/friends/${id}`).then(function(data){
+        console.log("show data: ", data);
+        friend = data; 
+        callback(friend); 
+      })
     };
     // Sometimes you might not want to make a DB call, and just get the information stored in the factory.
     this.getFriends = function(callback){

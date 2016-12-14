@@ -13,8 +13,17 @@ app.controller('listController', ['$scope', '$location', 'friendsFactory', funct
     console.log($scope.friends[index]);
     var id = $scope.friends[index]._id; 
     friendsFactory.delete(id, function(){
-      $scope.friends.splice(index, 1);
+      // $scope.friends.splice(index, 1);
     })
+  }
+
+  $scope.showfriend = function(index){
+    console.log($scope.friends[index]);
+    var id = $scope.friends[index]._id; 
+    // friendsFactory.show(id, function(){
+    //   $scope.friends.splice(index, 1);
+    // }) 
+    $location.url(`/friends/${id}`);
   }
 }])
 
@@ -27,9 +36,9 @@ app.controller('newController', ['$scope', '$location', 'friendsFactory', functi
     console.log("addfriend");
     friendsFactory.create($scope.newfriend, function(){
       // $scope.friends.push($scope.newfriend);
-      $scope.newfriend = {
-        firstname: '', lastname: '', birthday: ''
-      }
+      // $scope.newfriend = {
+      //   firstname: '', lastname: '', birthday: ''
+      // }
       $location.url('/');
     })
   }

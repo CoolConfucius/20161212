@@ -1,4 +1,4 @@
-console.log('future mongoose connection and model loading');
+console.log('mongoose connection and model loading');
 var mongoose = require('mongoose'),
     fs = require('fs'),
     path = require('path'),
